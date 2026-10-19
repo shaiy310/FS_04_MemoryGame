@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background-color: #eef2e9;
+  background-image: radial-gradient(#d8e0d4 0.65px, transparent 0.65px);
+  background-size: 16px 16px;
+  color: #20322d;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,28 @@
+.board {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.board-wait-message {
+  position: fixed;
+  z-index: 1000;
+  top: max(16px, env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100vw - 32px);
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+  text-align: center;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .board {
+    gap: 8px;
+  }
+}

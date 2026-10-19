@@ -1,0 +1,3 @@
+const REST_COUNTRY_API_KEY = 'rc_live_24c00d99fd3a49629602b475e28a880f';
+
+export default REST_COUNTRY_API_KEY;

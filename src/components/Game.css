@@ -1,0 +1,119 @@
+.game-layout {
+  display: grid;
+  width: 75%;
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 1fr) 170px;
+  align-items: start;
+  gap: 20px;
+}
+
+.control-panel {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #d3dcd1;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 3px 8px rgb(32 50 45 / 7%);
+}
+
+.control-panel-title {
+  margin: 0;
+  color: #20322d;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+}
+
+.player-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 0 10px;
+  border-left: 3px solid transparent;
+  border-radius: 3px;
+  background: #f1f4ed;
+  color: #34463e;
+  font-size: 13px;
+}
+
+.player-score.is-active {
+  border-left-color: #879e4a;
+  animation: active-score-pulse .5s ease-in-out infinite alternate;
+  color: #20322d;
+}
+
+@keyframes active-score-pulse {
+  from { background-color: #e8eedc; }
+  to { background-color: #b7c891; }
+}
+
+.player-score strong {
+  font-size: 18px;
+}
+
+.start-over-button {
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid #31574a;
+  border-radius: 4px;
+  background: #31574a;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.start-over-button:hover {
+  background: #244638;
+}
+
+.start-over-button:focus-visible {
+  outline: 3px solid #c8783d;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .game-layout {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) 130px;
+    gap: 10px;
+  }
+
+  .control-panel {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .player-score {
+    padding: 0 7px;
+    font-size: 11px;
+  }
+
+  .control-panel-title {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 420px) {
+  .game-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .control-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+  }
+
+  .control-panel-title {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .player-score.is-active {
+    animation: none;
+    background-color: #e8eedc;
+  }
+}
