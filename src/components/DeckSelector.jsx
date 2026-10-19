@@ -11,13 +11,24 @@ function DeckSelector({ decks, selectedDeckIndex, onSelectDeck }) {
                 value={selectedDeckIndex ?? ''}
                 onChange={(event) => {
                     const value = event.target.value;
-                    onSelectDeck(value === '' ? null : Number(value));
+                    switch (value) {
+                        case '':
+                            onSelectDeck(null);
+                            break;
+                        case 'random':
+                            const randomIndex = Math.floor(Math.random() * decks.length);
+                            onSelectDeck(randomIndex);
+                            break;
+                        default:
+                            onSelectDeck(Number(value));
+                    }
                 }}
             >
                 <option value="">None</option>
                 {decks.map((deck, index) => (
                 <option key={deck.name} value={index}>{deck.name}</option>
                 ))}
+                <option value="random">Random Deck</option>
             </select>
             </label>
         </div>

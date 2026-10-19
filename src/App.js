@@ -80,7 +80,7 @@ function App() {
       </header>
 
       <section className="game-section" aria-labelledby="board-heading">
-        {status === 'loading' && <p className="feedback" role="status">Loading images...</p>}
+        {status === 'loading' && <p className="feedback" role="status">Loading board...</p>}
         {status === 'idle' && <p className="feedback">Choose a deck to start.</p>}
         {status === 'error' && <p className="feedback error" role="alert">{error}</p>}
         {status === 'ready' && <Game cards={cards} />}
